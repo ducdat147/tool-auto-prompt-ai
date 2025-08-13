@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt Builder – FastAPI</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚡ Prompt Builder – FastAPI + HTML</h1>
+      <p class="subtitle">Điền form siêu nhanh → sinh prompt “chuẩn chỉnh” feed mọi AI model.</p>
+    </header>
+
+    <form method="post" action="/build" class="card">
+      <div class="grid">
+        <label>
+          <span>1) Role (vai trò của AI)</span>
+          <input name="role" placeholder="VD: Senior Backend Developer chuyên Django">
+        </label>
+
+        <label class="full">
+          <span>2) Context (ngữ cảnh)</span>
+          <textarea name="context" rows="4" placeholder="Bối cảnh, dữ liệu đầu vào, công nghệ, yêu cầu nền..."></textarea>
+        </label>
+
+        <label class="full">
+          <span>3) Objective (mục tiêu)</span>
+          <textarea name="objective" rows="3" placeholder="Bạn muốn AI làm gì? (tạo, phân tích, đề xuất, giải thích...)"></textarea>
+        </label>
+
+        <label class="full">
+          <span>4) Constraints (ràng buộc)</span>
+          <textarea name="constraints" rows="3" placeholder="Ngôn ngữ, format output, độ dài, công nghệ bắt buộc..."></textarea>
+        </label>
+
+        <label class="full">
+          <span>5) Examples (ví dụ) – tuỳ chọn</span>
+          <textarea name="examples" rows="3" placeholder="Mẫu output hoặc skeleton bạn muốn AI theo."></textarea>
+        </label>
+
+        <label class="full">
+          <span>6) Instruction Style (cách AI trình bày)</span>
+          <textarea name="style" rows="3" placeholder="Trình bày tuần tự, có ví dụ, có code, bullet points..."></textarea>
+        </label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">🚀 Sinh Prompt</button>
+        <button type="reset" class="btn secondary">🧹 Clear</button>
+      </div>
+    </form>
+
+    <footer>
+      <p>Made with ❤️ FastAPI · No external deps.</p>
+    </footer>
+  </div>
+</body>
+</html>

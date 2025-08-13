@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kết quả Prompt</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>✅ Prompt đã sinh</h1>
+      <p class="subtitle">Copy-paste thẳng vào GPT / Claude / Gemini thôi nào.</p>
+    </header>
+
+    <div class="card">
+      <textarea id="prompt" rows="16" readonly>{{ prompt }}</textarea>
+      <div class="actions">
+        <button class="btn" id="copyBtn" onclick="copyPrompt()">📋 Copy</button>
+        <form method="post" action="/download" style="display:inline;">
+          <input type="hidden" name="prompt" value="{{ prompt | replace('\n', '&#10;') }}">
+          <button class="btn secondary" type="submit">⬇️ Tải .txt</button>
+        </form>
+        <form method="post" action="/download_md" style="display:inline;">
+  <input type="hidden" name="prompt" value="{{ prompt | replace('\n', '&#10;') }}">
+  <button class="btn secondary" type="submit">📝 Tải .md</button>
+</form>
+        <a class="btn ghost" href="/">↩️ Nhập lại</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>Tip: Lưu lại các combo role + context + constraints thành preset để dùng lại sau.</p>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
