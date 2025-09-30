@@ -3,8 +3,8 @@
 
 ## Chạy local
 ```bash
-pip install fastapi uvicorn jinja2
-uvicorn app:app --reload --port 8000
+uv sync
+uv run uvicorn app:app --reload --port 8000
 # Mở trình duyệt: http://127.0.0.1:8000
 ```
 
